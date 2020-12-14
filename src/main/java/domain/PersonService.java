@@ -38,4 +38,12 @@ public class PersonService {
     public List<Person> getAllPositive() {
         return repository.getAllPositive();
     }
+
+    public List<Person> searchRoom(String firstName, String lastName, LocalDate date) {
+        return repository.searchRoom(firstName, lastName,date);
+    }
+
+    public List<Person> searchPerson(LocalDate date, String room) {
+        return repository.searchPerson(date, room);
+    }
 }

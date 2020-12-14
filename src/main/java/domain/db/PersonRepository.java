@@ -34,12 +34,6 @@ public class PersonRepository {
     }
 
     public void add(Person person) {
-        if (person == null) {
-            throw new IllegalArgumentException("No person given");
-        }
-        if (persons.containsKey(person.getEmail())) {
-            throw new IllegalArgumentException("User already exists");
-        }
         persons.put(person.getEmail(), person);
     }
 
@@ -62,5 +56,27 @@ public class PersonRepository {
             }
         }
         return positives;
+    }
+
+    public List<Person> searchRoom(String firstName, String lastName, LocalDate date) {
+        List<Person> result = new ArrayList<>();
+        for (Person person : persons.values()){
+            if (person.getFirstName().equalsIgnoreCase(firstName) && person.getLastName().equalsIgnoreCase(lastName)){
+                if (date.isAfter(person.getDate())) {
+                    result.add(person);
+                }
+            }
+        }
+        return result;
+    }
+
+    public List<Person> searchPerson(LocalDate date, String room) {
+        List<Person> result = new ArrayList<>();
+        for (Person person : persons.values()){
+            if (person.getDate().equals(date) && person.getRoom().trim().equalsIgnoreCase(room)){
+                result.add(person);
+            }
+        }
+        return result;
     }
 }
