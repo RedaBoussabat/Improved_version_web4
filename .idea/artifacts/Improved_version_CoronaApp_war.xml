@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Improved_version_CoronaApp:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Improved_version_CoronaApp</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Improved_version_CoronaApp-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Improved_version_CoronaApp:war exploded" />
+    </root>
+  </artifact>
+</component>
