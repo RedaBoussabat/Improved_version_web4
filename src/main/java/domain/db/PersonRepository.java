@@ -95,12 +95,16 @@ public class PersonRepository {
         return people;
     }
 
-    public Set<String> getAllDiffentRooms(){
+    public List<String> getAllDiffentRooms(){
+        ArrayList<String> lst = new ArrayList<>();
         Set<String> rooms = new HashSet<>();
         for (Person person : getTwenty()){
             rooms.add(person.getRoom());
         }
-        return rooms;
+        for (String t : rooms){
+            lst.add(t);
+        }
+        return lst;
     }
 
 

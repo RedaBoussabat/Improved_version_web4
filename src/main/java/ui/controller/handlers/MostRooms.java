@@ -17,13 +17,13 @@ public class MostRooms extends RequestHandler {
     @Override
     public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String json = this.roomsToJSON(getPersonService().giveTopThree());
+        String json = this.roomsToJSON(getPersonService().allDifferentRooms());
         response.setContentType("application/json");
         response.getWriter().write(json);
 
     }
 
-    public String roomsToJSON (List<Person> rooms) throws JsonProcessingException {
+    public String roomsToJSON (List<String> rooms) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.writeValueAsString(rooms);
     }

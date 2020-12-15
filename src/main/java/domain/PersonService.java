@@ -51,7 +51,7 @@ public class PersonService {
         return repository.get(mail);
     }
 
-    public List<Person> giveTopThree() {
-        return repository.giveTopThree();
+    public List<String> allDifferentRooms(){
+        return repository.getAllDiffentRooms();
     }
 }

@@ -4,8 +4,8 @@ $(function getMostRooms(){
     url: "Controller?command=MostRooms",
     dataType: "json",
     success: function (json){
-      $(json).each(function (index, person){
-        $('#mostRooms').append($('<p />').text(person.room));
+      $(json).each(function (index, room){
+        $('#mostRooms').append($('<p />').text(room));
         setTimeout(getMostRooms,10000);
       })
     },
