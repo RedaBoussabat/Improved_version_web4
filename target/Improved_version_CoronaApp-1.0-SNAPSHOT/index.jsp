@@ -42,7 +42,6 @@
             </c:otherwise>
         </c:choose>
 
-
         <table>
             <thead>
             <tr>
@@ -94,9 +93,21 @@
             </table>
             <input type="button" id="registerButton" value="Register"/>
         </form>
+        <script type="text/javascript" src="js/twenty.js"></script>
+
+
+    <%--
+        &lt;%&ndash;<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+--%>
+<%--
+        <script type="text/javascript" src="js/mostrooms.js"></script>
+--%>
+        <table>
+            <h3>3 Most visited rooms</h3>
+            <tbody id="mostRooms"></tbody>
+        </table>
     </div>
 
 </main>
-<script type="text/javascript" src="js/twenty.js"></script>
 </body>
 </html>

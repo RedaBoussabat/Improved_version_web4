@@ -15,12 +15,12 @@ public class Home extends RequestHandler {
     @Override
     public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            List<Person> twenty = getPersonService().getAll();
+            List<Person> twenty = getPersonService().getTwenty();
             String personJSON = this.toJSON(twenty);
             response.setContentType("application/json");
             response.getWriter().write(personJSON);
         } catch (Exception e){
-            List<Person> twenty = getPersonService().getAll();
+            List<Person> twenty = getPersonService().getTwenty();
             String personJSON = this.toJSON(twenty);
             response.setContentType("application/json");
             response.getWriter().write(personJSON);

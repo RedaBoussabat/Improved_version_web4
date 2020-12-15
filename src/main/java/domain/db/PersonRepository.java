@@ -3,10 +3,7 @@ package domain.db;
 import domain.model.Person;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class PersonRepository {
 
@@ -15,7 +12,7 @@ public class PersonRepository {
     public PersonRepository() {
         // Persons
         Person test = new Person("Test", "TestTheSecond", "123", "t", "C001", LocalDate.now().minusDays(2));
-        Person reda = new Person("Reda", "Boussabat", "123", "t", "C001", LocalDate.now());
+        Person reda = new Person("Reda", "Boussabat", "123", "t", "C003", LocalDate.now());
         test.setStatus();
 
         add(test);
@@ -29,8 +26,18 @@ public class PersonRepository {
         return persons.get(personId);
     }
 
-    public List<Person> getAll() {
-        return new ArrayList<Person>(persons.values());
+    public List<Person> getTwenty() {
+        List<Person> twenty = new ArrayList<>();
+
+        if (this.persons.size() > 20) {
+            for (int i = (this.persons.size() - 20); i < this.persons.size(); i++) {
+                twenty.add(this.persons.get(i));
+            }
+        } else {
+            return new ArrayList<Person>(persons.values());
+        }
+        return twenty;
+        /*return new ArrayList<Person>(persons.values());*/
     }
 
     public void add(Person person) {
@@ -79,4 +86,22 @@ public class PersonRepository {
         }
         return result;
     }
+
+    public List<Person> giveTopThree(){
+        ArrayList<Person> people = new ArrayList<>();
+        for (int i = (this.persons.size() - 20); i < this.persons.size(); i++) {
+            people.add(this.persons.get(i));
+        }
+        return people;
+    }
+
+    public Set<String> getAllDiffentRooms(){
+        Set<String> rooms = new HashSet<>();
+        for (Person person : getTwenty()){
+            rooms.add(person.getRoom());
+        }
+        return rooms;
+    }
+
+
 }

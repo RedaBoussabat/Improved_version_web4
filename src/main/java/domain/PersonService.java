@@ -15,8 +15,8 @@ public class PersonService {
     public PersonService() {
     }
 
-    public List<Person> getAll(){
-        return repository.getAll();
+    public List<Person> getTwenty(){
+        return repository.getTwenty();
     }
 
     public void addPerson(Person person) {
@@ -45,5 +45,13 @@ public class PersonService {
 
     public List<Person> searchPerson(LocalDate date, String room) {
         return repository.searchPerson(date, room);
+    }
+
+    public Person get(String mail) {
+        return repository.get(mail);
+    }
+
+    public List<Person> giveTopThree() {
+        return repository.giveTopThree();
     }
 }
