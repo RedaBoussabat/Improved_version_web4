@@ -13,10 +13,14 @@ public class PersonRepository {
         // Persons
         Person test = new Person("Test", "TestTheSecond", "123", "t", "C001", LocalDate.now().minusDays(2));
         Person reda = new Person("Reda", "Boussabat", "123", "t", "C003", LocalDate.now());
+        Person president = new Person("Bernie", "Sanders", "123", "t", "C003", LocalDate.now());
+        Person pedro = new Person("MyFriend", "Pedro", "123", "t", "C002", LocalDate.now());
         test.setStatus();
 
         add(test);
         add(reda);
+        add(president);
+        add(pedro);
     }
 
     public Person get(String personId) {
