@@ -17,14 +17,14 @@ nav {
     display: flex;
     justify-content: center;
 }
-ul {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
-li {
+nav ul li {
     display: inline-flex;
 }
 
@@ -82,6 +82,10 @@ fieldset {
 
 fieldset {
     border: 1px solid #999;
+}
+
+.important {
+    color: red;
 }
 
 
