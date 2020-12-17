@@ -93,4 +93,8 @@ public class Person {
     public void setDate(LocalDate date) {
         this.date = date;
     }
+
+    public void changeEmail(String thisUserEmail) {
+        this.email = thisUserEmail;
+    }
 }

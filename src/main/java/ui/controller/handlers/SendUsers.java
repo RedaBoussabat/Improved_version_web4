@@ -26,13 +26,30 @@ public class SendUsers extends RequestHandler {
         // Implement the changes
         String newFirstName = request.getParameter("firstName");
         String thisUserEmail = request.getParameter("email");
+        String newLastName = request.getParameter("lastName");
+        String newGsm = request.getParameter("gsm");
+        String newPassword = request.getParameter("password");
 
-        System.out.println(newFirstName + " " + thisUserEmail);
 
-        if (newFirstName != null){
-            getPersonService().get(thisUserEmail).setFirstName(newFirstName);
-            System.out.println(thisUserEmail + " changed name to " + newFirstName);
+        /*System.out.println(newFirstName);
+        System.out.println(thisUserEmail);
+        System.out.println(newLastName);
+        System.out.println(newGsm);
+        System.out.println(newPassword);*/
+
+
+        if (thisUserEmail != null){
+            Person person = getPersonService().get(thisUserEmail);
+            person.setFirstName(newFirstName);
+            person.setLastName(newLastName);
+            person.setGsm(newGsm);
+            person.setPassword(newPassword);
+            if(!person.getEmail().equalsIgnoreCase(thisUserEmail)){
+                person.changeEmail(thisUserEmail);
+            }
         }
+
+
 
     }
 }
